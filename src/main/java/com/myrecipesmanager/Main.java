@@ -1,13 +1,13 @@
-package com.thibaultbman.myrecipesmanager;
+package com.myrecipesmanager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MyRecipesManagerApplication {
+public class Main {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MyRecipesManagerApplication.class, args);
+		SpringApplication.run(Main.class, args);
 	}
 
 }
