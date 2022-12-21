@@ -17,6 +17,10 @@ public class RecipeService implements IRecipeService {
     private final RecipeRepository recipeRepository;
     private final RecipeTransformer recipeTransformer;
 
+    public Long getRecipesCount() {
+        return recipeRepository.count();
+    }
+
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
     }

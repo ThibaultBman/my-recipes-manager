@@ -37,4 +37,7 @@ public class RecipeController {
     public void deleteRecipe(@PathVariable Integer id) {
         recipeService.deleteRecipe(id);
     }
+
+    @GetMapping("/count")
+    public Long getRecipesCount() { return recipeService.getRecipesCount(); }
 }

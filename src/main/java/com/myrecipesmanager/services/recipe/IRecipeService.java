@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface IRecipeService {
 
+    Long getRecipesCount();
+
     /**
      * Get all recipes from database
      * @return list of recipes
