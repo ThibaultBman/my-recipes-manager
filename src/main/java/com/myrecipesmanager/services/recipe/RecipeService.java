@@ -36,10 +36,6 @@ public class RecipeService implements IRecipeService {
     }
 
     public Recipe updateRecipe(Integer id, RecipeDTO recipeDTO) {
-        if (recipeDTO.name() == null || recipeDTO.duration() == null) {
-            throw new IllegalArgumentException("Invalid model");
-        }
-
         if (!recipeRepository.existsById(id)) {
             throw new EntityNotFoundException("The recipe doesn't exist");
         }
