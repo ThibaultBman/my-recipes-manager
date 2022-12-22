@@ -3,6 +3,7 @@ package com.myrecipesmanager.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 
 @Entity
 @Getter
@@ -20,6 +21,10 @@ public class Recipe {
             generator = "recipe_id_sequence"
     )
     private Integer id;
+    @NotNull
     private String name;
-    private Integer duration;
+    @NotNull
+    private Integer prepTime;
+    @NotNull
+    private Integer cookTime;
 }
