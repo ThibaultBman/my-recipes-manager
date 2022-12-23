@@ -4,6 +4,7 @@ public record RecipeDTO (
 
     String name,
     Integer prepTime,
-    Integer cookTime
+    Integer cookTime,
+    Integer servings
 ) { }
 

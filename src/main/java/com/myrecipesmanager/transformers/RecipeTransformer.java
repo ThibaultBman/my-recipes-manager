@@ -9,7 +9,10 @@ public class RecipeTransformer implements ITransformer<RecipeDTO, Recipe> {
 
     public Recipe transform(RecipeDTO inputObject, Recipe outputObject) {
         outputObject.setName(inputObject.name());
-        outputObject.setDuration(inputObject.duration());
+        outputObject.setPrepTime(inputObject.prepTime());
+        outputObject.setCookTime(inputObject.cookTime());
+        outputObject.setServings(inputObject.servings());
+
         return outputObject;
     }
 }

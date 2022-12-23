@@ -1,13 +1,15 @@
 package com.myrecipesmanager.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
-import org.jetbrains.annotations.NotNull;
+import org.springframework.validation.annotation.Validated;
 
 @Entity
 @Getter
 @Setter
+@Validated
 public class Recipe {
 
     @Id
@@ -27,4 +29,8 @@ public class Recipe {
     private Integer prepTime;
     @NotNull
     private Integer cookTime;
+    @NotNull
+    private Integer servings;
+    // Ingredients
+    // Directions
 }

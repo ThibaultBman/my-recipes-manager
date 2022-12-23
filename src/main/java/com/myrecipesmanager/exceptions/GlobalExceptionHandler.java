@@ -1,6 +1,7 @@
 package com.myrecipesmanager.exceptions;
 
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -23,6 +24,13 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String handlerMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException e) {
         return "The parameter " + e.getName() + " value is incorrect";
+    }
+
+    // Null value in model with @NotNull annotation
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handlerIllegalArgumentException(ConstraintViolationException e) {
+        return "Invalid model";
     }
 
     // Wrong HTTP method
